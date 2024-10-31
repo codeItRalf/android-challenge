@@ -1,6 +1,5 @@
 package com.ethermail.androidchallenge.ui.features.assets
 
-import app.cash.turbine.test
 import app.cash.turbine.turbineScope
 import com.ethermail.androidchallenge.data.CoinCapService
 import com.ethermail.androidchallenge.data.model.assets.AssetData
