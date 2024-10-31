@@ -15,6 +15,9 @@ retrofitOkhttp = "4.12.0"
 androidxHilt = "1.2.0"
 pluginHilt = "2.51"
 ksp = "1.9.25-1.0.20"
+turbine = "1.2.0"
+kotlinxCoroutinesTest = "1.7.3"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,6 +43,9 @@ squareup-retrofit = { group = "com.squareup.retrofit2", name="retrofit", version
 squareup-retrofit-gson = { group = "com.squareup.retrofit2", name="converter-gson", version.ref = "retrofit" }
 squareup-logginginterceptor = { group = "com.squareup.okhttp3", name="logging-interceptor", version.ref = "retrofitOkhttp" }
 squareup-mockwebserver = { group = "com.squareup.okhttp3", name="logging-interceptor", version.ref = "retrofitOkhttp" }
+
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

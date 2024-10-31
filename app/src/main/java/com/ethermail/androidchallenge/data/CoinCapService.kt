@@ -5,9 +5,9 @@ import com.ethermail.androidchallenge.data.model.assets.AssetsApiData
 import com.ethermail.androidchallenge.data.model.markets.MarketsApiData
 import retrofit2.http.GET
 
-const val HOST_COINCAP = "https://api.coincap.io/"
+const val HOST_COIN_CAP = "https://api.coincap.io/"
 
-interface CoincapService {
+interface CoinCapService {
 
     @GET("/v2/assets")
     suspend fun getAssets(): AssetsApiData
