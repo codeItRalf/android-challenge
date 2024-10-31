@@ -8,6 +8,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.ethermail.androidchallenge.ui.theme.features.common.StateHandler
+import com.ethermail.androidchallenge.ui.theme.features.markets.component.MarketBody
 
 
 @Composable
@@ -22,12 +24,16 @@ fun MarketScreen(assetId: String, viewModel: MarketViewModel = hiltViewModel()) 
     }
 
     Scaffold { innerPadding ->
-        when{
-            market != null -> MarketBody(
+
+        StateHandler(isLoading = isLoading || market == null,
+            error = error,
+            onRetry = { viewModel.loadMarketWithHighestVolume(assetId) }) {
+            MarketBody(
                 Modifier.padding(innerPadding),
                 market = market!!
             )
         }
+
     }
 
 

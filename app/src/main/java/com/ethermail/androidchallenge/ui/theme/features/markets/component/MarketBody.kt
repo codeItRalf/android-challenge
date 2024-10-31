@@ -1,4 +1,4 @@
-package com.ethermail.androidchallenge.ui.theme.features.markets
+package com.ethermail.androidchallenge.ui.theme.features.markets.component
 
 
 import androidx.compose.foundation.layout.Box
@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ethermail.androidchallenge.data.model.markets.MarketData
 import com.ethermail.androidchallenge.ui.theme.features.markets.MarketMapper.toUiModel
+import com.ethermail.androidchallenge.ui.theme.features.markets.MarketUiItem
 
 
 @Composable

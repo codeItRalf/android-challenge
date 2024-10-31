@@ -119,7 +119,6 @@ class MarketsViewModelTest {
             viewModel.loadMarketWithHighestVolume("bitcoin")
 
             val loadingState = flowTurbine.awaitItem()
-            // check list is not empty
             println("Check that correct market with highest volume gets filtered")
             assert(loadingState != null)
             assert(loadingState?.exchangeId == "coinbase")
