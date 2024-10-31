@@ -10,11 +10,11 @@ fun StateHandler(
     content: @Composable () -> Unit
 ) {
     when {
-        isLoading -> LoadingScreen()
         error != null -> ErrorScreen(
             error = error,
             onTryAgain = onRetry
         )
+        isLoading -> LoadingScreen()
 
         else -> content()
     }

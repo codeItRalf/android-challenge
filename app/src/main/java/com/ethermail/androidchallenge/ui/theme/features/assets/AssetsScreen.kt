@@ -29,13 +29,16 @@ fun AssetsScreen(
 
         StateHandler(isLoading = isLoading,
             error = error,
-            onRetry = { viewModel.loadAssets() }) { }
+            onRetry = { viewModel.loadAssets() }) {
+            AssetsList(
+                Modifier.padding(innerPadding),
+                assets = assets,
+                onAssetClick = onAssetClick
+            )
 
-        AssetsList(
-            Modifier.padding(innerPadding),
-            assets = assets,
-            onAssetClick = onAssetClick
-        )
+        }
+
+
 
     }
 }
