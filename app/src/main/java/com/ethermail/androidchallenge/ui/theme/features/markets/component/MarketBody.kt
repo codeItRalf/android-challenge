@@ -37,7 +37,7 @@ fun MarketBody(modifier: Modifier, market: MarketUiItem) = Box(modifier = modifi
             Text(text = "Price", fontWeight = FontWeight.Bold)
             Text(text = market.priceUsd)
 
-            Text(text = "Date", fontWeight = FontWeight.Bold)
+            Text(text = "Updated Date", fontWeight = FontWeight.Bold)
             Text(text = market.lastUpdated)
         }
     }

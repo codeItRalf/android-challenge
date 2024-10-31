@@ -8,4 +8,6 @@ object StringUtil {
             0.0
         }
     }
+
+    fun String.capitalizeFirstLetter(): String = this.substring(0, 1).uppercase() + this.substring(1)
 }

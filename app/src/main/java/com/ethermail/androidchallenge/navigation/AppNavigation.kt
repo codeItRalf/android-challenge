@@ -27,7 +27,7 @@ fun AppNavigation(navController: NavHostController) {
         composable(route = Screen.Market.route) { backStackEntry ->
             val assetId = backStackEntry.arguments?.getString("assetId")
             requireNotNull(assetId) { "Asset ID cannot be null" }
-            MarketScreen(assetId = assetId)
+            MarketScreen(assetId = assetId, navController = navController)
         }
     }
 }

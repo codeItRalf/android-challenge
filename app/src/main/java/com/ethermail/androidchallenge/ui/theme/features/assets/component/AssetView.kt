@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.ethermail.androidchallenge.ui.theme.features.assets.AssetUiItem
 
 @Composable
-private fun AssetView(asset: AssetUiItem, onClick: () -> Unit) = Card(
+fun AssetView(asset: AssetUiItem, onClick: () -> Unit) = Card(
     shape = RoundedCornerShape(10),
     modifier = Modifier.fillMaxWidth(),
     onClick = { onClick() }
