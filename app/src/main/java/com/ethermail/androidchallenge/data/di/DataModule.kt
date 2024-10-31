@@ -18,12 +18,14 @@ import javax.inject.Singleton
 @Module
 object DataModule {
 
+    // Provides a dispatcher for the repository to avoid using the main thread
     @Provides
     @Singleton
     fun provideDispatcher(): CoroutineDispatcher {
         return Dispatchers.Default
     }
 
+    // Provides an OkHttpClient instance for the CoinCapService as it is standard to use OkHttp with Retrofit for network requests to avoid hanging connections
     @Provides
     @Singleton
     fun okhttpClient(): OkHttpClient {

@@ -31,6 +31,7 @@ class MarketViewModel @Inject constructor(
             _isLoading.value = true
             try {
                 val response = marketsRepository.getMarkets(baseId)
+                // Find the market with the highest volume
                 val highestVolumeMarket = response.marketData
                     ?.maxByOrNull {
                         try {
