@@ -55,7 +55,7 @@ class AssetsViewModelTest {
                 ), 0)
             }
 
-            override suspend fun getMarkets(): MarketsApiData {
+            override suspend fun getMarkets(assetId: String): MarketsApiData {
                 return MarketsApiData(
                     marketData = emptyList(),
 

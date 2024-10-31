@@ -5,6 +5,7 @@ import com.ethermail.androidchallenge.data.model.assets.AssetData
 object AssetsMapper {
     fun AssetData.toUiModel(): AssetUiItem {
         return AssetUiItem(
+            id = id ?: "",
             symbol = symbol ?: "N/A",
             name = name ?: "N/A",
             price = priceUsd ?: "N/A"

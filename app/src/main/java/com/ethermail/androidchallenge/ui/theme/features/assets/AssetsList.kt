@@ -1,5 +1,6 @@
 package com.ethermail.androidchallenge.ui.theme.features.assets
 
+import android.R.attr.onClick
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -23,7 +24,9 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun AssetsList(
     modifier: Modifier,
-    assets: List<AssetUiItem>) {
+    assets: List<AssetUiItem>,
+    onAssetClick: (String) -> Unit
+   ) {
     LazyColumn(
         state = rememberLazyListState(),
         modifier = modifier.fillMaxSize(),
@@ -31,15 +34,16 @@ fun AssetsList(
         contentPadding = PaddingValues(top = 4.dp),
     ) {
         items(count = assets.size, key = { index -> assets[index].symbol }) { index ->
-            AssetView(asset = assets[index])
+            AssetView(asset = assets[index], onClick = { onAssetClick(assets[index].id) })
         }
     }
 }
 
 @Composable
-private fun AssetView(asset: AssetUiItem) = Card(
+private fun AssetView(asset: AssetUiItem, onClick: () -> Unit) = Card(
     shape = RoundedCornerShape(10),
     modifier = Modifier.fillMaxWidth(),
+    onClick = { onClick() }
 ) {
     Column(modifier = Modifier.padding(8.dp)) {
         Text(text = asset.name)
@@ -56,5 +60,6 @@ private fun AssetView(asset: AssetUiItem) = Card(
 private fun PreviewAssetView() {
     AssetsList(
         modifier = Modifier.padding(16.dp),
-        assets = dummyAssets)
+        assets = dummyAssets,
+        onAssetClick = {})
 }

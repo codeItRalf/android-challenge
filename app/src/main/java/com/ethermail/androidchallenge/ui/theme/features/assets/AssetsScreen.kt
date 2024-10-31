@@ -23,6 +23,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @Composable
 fun AssetsScreen(
     viewModel: AssetsViewModel = hiltViewModel(),
+    onAssetClick: (String) -> Unit
 ) {
 
     val assets by viewModel.assets.collectAsState()
@@ -45,6 +46,7 @@ fun AssetsScreen(
                 AssetsList(
                     Modifier.padding(innerPadding),
                     assets = assets,
+                    onAssetClick = onAssetClick
                 )
         }
     }
