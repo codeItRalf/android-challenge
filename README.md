@@ -1,3 +1,42 @@
+# Project Implementation Summary
+
+## Architecture & Dependencies
+- Implemented MVVM architecture with Clean Architecture principles
+- Set up Dependency Injection using Hilt
+- Configured DataModule with:
+  - CoroutineDispatcher injection for background thread operations
+  - OkHttpClient with timeout configurations to prevent connection issues
+
+## Features
+### Screens
+- Asset Screen: Displays list of cryptocurrency assets
+- Market Screen: Shows detailed market information for selected asset
+  - Implements logic to display market with highest 24-hour volume
+
+### Navigation
+- Implemented navigation between screens
+
+### State Management
+- Created StateHandler to manage UI states:
+  - Loading state with progress indicator
+  - Error state with retry functionality
+  - Success state with data display
+
+## Testing
+### ViewModel Tests
+- AssetViewModel
+  - Verifies correct loading of asset list
+- MarketViewModel
+  - Confirms selection of highest volume market
+
+
+### Mapper Tests
+- AssetMapper/MarketMapper: Validates correct data transformation
+
+
+
+--------------------------------------
+
 # Introduction
 Welcome to EtherMail's code challenge project. This repository contains an Android application with some basic functionality
 to support the development of the code test required during the hiring process for an Android developer in EtherMail.
